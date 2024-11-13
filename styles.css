@@ -142,6 +142,109 @@ nav ul li a {
     }
 }
 
+.about-us {
+    background-color: var(--background-color); /* Light blue-gray background */
+    padding: 60px 0;
+}
+
+.about-us .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Box */
+.about-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .about-box {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* About Content (Left Side) */
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Features List (Right Side) */
+.about-features {
+    flex: 1;
+    padding-left: 20px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.feature {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 10px;
+}
+
+.feature:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+.feature-content {
+    font-size: 15px;
+    color: #555;
+    display: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Start with 0 opacity */
+    transform: translateY(-10px);
+}
+
+.toggle-icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.feature.active .feature-content {
+    opacity: 1;
+    transform: translateY(0); /* Reset transform for slide effect */
+    max-height: 120px; /* Arbitrary height, large enough to fit most content */
+}
+
+.feature.active .toggle-icon {
+    transform: rotate(180deg); /* Rotate icon to indicate expanded state */
+}
+
 /* Committee Section */
 .committee {
     padding: 80px 0;
@@ -158,8 +261,8 @@ nav ul li a {
 /* Grid Wrapper for Profile Cards */
 .profile-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: center;
@@ -208,6 +311,7 @@ nav ul li a {
 
 /* Events Section */
 .events {
+    background-color: var(--background-color);
     padding: 80px 0;
 }
 
@@ -224,14 +328,25 @@ nav ul li a {
     justify-content: center;
 }
 
+/* Event Item Styling */
 .event-item {
     background-color: var(--white-color);
     width: 300px;
     margin: 15px;
-    padding: 20px;
-    text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px var(--shadow-color);
+    overflow: hidden; /* Add this to clip overflowing content */
+}
+
+.event-item img {
+    width: 100%;
+    height: 180px; /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.event-item .event-content {
+    padding: 20px;
+    text-align: center;
 }
 
 .event-item h3 {
@@ -245,6 +360,15 @@ nav ul li a {
 
 .event-item .btn {
     margin-top: 10px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.event-item .btn:hover {
+    background-color: #1e4da8; /* Slightly darker shade for hover effect */
 }
 
 /* Contact Section */
