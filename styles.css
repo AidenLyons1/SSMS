@@ -238,7 +238,7 @@ nav ul li a {
 .feature.active .feature-content {
     opacity: 1;
     transform: translateY(0); /* Reset transform for slide effect */
-    max-height: 120px; /* Arbitrary height, large enough to fit most content */
+    max-height: 700px; /* Arbitrary height, large enough to fit most content */
 }
 
 .feature.active .toggle-icon {
